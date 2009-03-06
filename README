@@ -11,7 +11,7 @@ Description:
     "stdout" is useful to use with image prosessor, e.g. "ImageMagick".
 
 How to build:
-  This program is depend on following library and pacages:
+  This program is depend on following library and packages:
   * libfad - "Flash Animation Decode library"
     http://sourceforge.net/projects/fad/
   * cairo-devel
@@ -22,8 +22,21 @@ How to build:
   And
     $ make
     $ make install
-  It install into "/usr/local/bin".
+  It install into "/usr/local/bin" by default.
 
 
 How to use:
   See "flashtojpeg -h" for command-line options.
+
+  Sample:
+  $ flashtojpeg foo.swf bar.jpg
+  => Render "bar.jpg" from "foo.swf", frame at 0sec(first), JPEG quality is 100(BEST).
+
+  $ flashtojpeg foo.swf -q 50 -t 10 bar.jpg
+  => Render "bar.jpg" from "foo.swf", frame at 10 sec, JPEG quality is 50.
+
+  $ flashtojpeg foo.swf
+  => Print "foo.swf" information that image width(px), height(px) and frame rate.
+
+  $ flashtojpeg foo.swf -- | convert - -resize "200x200>" thumb.jpg
+  => Write JPEG stream to stdout, and resize with ImageMagick.
