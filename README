@@ -1,0 +1,29 @@
+Flash to JPEG
+  Copyright 2009, Toshiyuki Suzumura. under GPL license.
+
+Description:
+  "flashtojpeg" is console utility, it render JPEG from Flash-anmination (SWF).
+
+  You can specify:
+  * Rendering frame by sec.
+  * Quality of JPEG compression.
+  * Write JPEG stream to "file" or "stdout".
+    "stdout" is useful to use with image prosessor, e.g. "ImageMagick".
+
+How to build:
+  This program is depend on following library and pacages:
+  * libfad - "Flash Animation Decode library"
+    http://sourceforge.net/projects/fad/
+  * cairo-devel
+  * SDL-devel
+  * libjpeg-devel
+
+  First, you must install these library and packages.
+  And
+    $ make
+    $ make install
+  It install into "/usr/local/bin".
+
+
+How to use:
+  See "flashtojpeg -h" for command-line options.
