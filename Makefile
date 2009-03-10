@@ -28,7 +28,7 @@ clean:
 
 install: $(SHAREDLIBV)
 	-@if [ ! -d $(PREFIX)/bin ]; then mkdir -p $(PREFIX)/bin; fi
-	install ${EXE) $(PREFIX)/bin
+	install $(EXE) $(PREFIX)/bin
 
 uninstall:
 	rm $(PREFIX)/bin/$(EXE)
